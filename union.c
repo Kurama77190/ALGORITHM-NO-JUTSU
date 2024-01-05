@@ -6,7 +6,7 @@
 /*   By: sben-tay <sben-tay@student.42.paris.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 23:35:00 by sben-tay          #+#    #+#             */
-/*   Updated: 2024/01/05 02:08:16 by sben-tay         ###   ########.fr       */
+/*   Updated: 2024/01/05 02:15:33 by sben-tay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,11 +56,3 @@ int main (int argc, char **argv)
 	ft_putchar('\n');
 	return (0);
 }
-
-// union.c:41:60: error: array subscript has type ‘char’ [-Werror=char-subscripts]
-//    41 |                 if (char_is_in_str(s1[i], s2) && !dejavu[s1[i]])
-//       |                                                          ~~^~~
-// union.c:51:60: error: array subscript has type ‘char’ [-Werror=char-subscripts]
-//    51 |                 if (char_is_in_str(s2[i], s1) && !dejavu[s2[i]])
-//       |                                                          ~~^~~
-// cc1: all warnings being treated as errors
