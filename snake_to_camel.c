@@ -6,7 +6,7 @@
 /*   By: sben-tay <sben-tay@student.42.paris.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 23:18:03 by sben-tay          #+#    #+#             */
-/*   Updated: 2024/01/03 04:15:57 by sben-tay         ###   ########.fr       */
+/*   Updated: 2024/01/05 02:35:21 by sben-tay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	camel(char *str)
 	int i = 0;
 	while (str[i])
 	{
-		if (str[i] == '_' && str[i] + 1] != '_')
+		if (str[i] == '_' && str[i + 1] != '_')
 		{
 			str[++i] -= 32;  
 			write(1, &str[i], 1);
