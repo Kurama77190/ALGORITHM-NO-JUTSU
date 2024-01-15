@@ -5,39 +5,53 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sben-tay <sben-tay@student.42.paris.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/03 22:10:34 by sben-tay          #+#    #+#             */
-/*   Updated: 2024/01/03 22:23:50 by sben-tay         ###   ########.fr       */
+/*   Created: 2024/01/15 09:43:11 by sben-tay          #+#    #+#             */
+/*   Updated: 2024/01/15 10:07:09 by sben-tay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdbool.h>
+#include <stddef.h>
 
+void	ft_first_word(char *s);
+void	ft_putchar(char c);
+bool ft_isspace(char c);
 
-void	first_word(char *str)
-{
-	int i = 0;
-	while (str[i])
-	{
-		if (str[i] == ' ')
-			i++;
-		else if (str[i] != ' ' && str[i + 1] != ' ')
-			write(1, &str[i++], 1);
-		else if (str[i] != ' ' && str[i + 1] == ' ')
-		{
-			write(1, &str[i], 1);
-			break ;
-		}	
-	}
-}
-
+//									MAIN PROG
+//--------------------------------------------------------------------------------------
 int main (int argc, char **argv)
 {
 	if (argc != 2)
 	{
-		write(1, "\n", 1);
+		ft_putchar('\n');
 		return (0);
 	}
-	first_word(argv[1]);
-	write(1, "\n", 1);
+	ft_first_word(argv[1]);
+	ft_putchar('\n');
+}
+
+//									HELPERS
+//--------------------------------------------------------------------------------------
+
+void	ft_first_word(char *s)
+{
+	size_t i = 0;
+	while(ft_isspace(s[i]) && s[i])
+		i++;
+	while(!ft_isspace(s[i]) && s[i])
+	{
+		ft_putchar(s[i]);
+		i++;
+	}
+}
+
+void	ft_putchar(char c)
+{
+	write (1, &c, 1);
+}
+
+bool ft_isspace(char c)
+{
+	return (c == ' ' || c == '\n' || c == '\r' || c == '\t' || c == '\v' || c == '\f');
 }
